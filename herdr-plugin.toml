@@ -1,0 +1,20 @@
+id = "elc"
+name = "ELC"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "Fuzzy-pick an ELC component and open a terminal in its folder as a pane, tab, or workspace."
+platforms = ["linux", "macos"]
+
+[[actions]]
+id = "open-component"
+title = "Open ELC component"
+description = "Show an fzf picker of ELC components and open a terminal in the selected folder."
+command = ["bash", "scripts/open-picker.sh"]
+
+[[panes]]
+id = "picker"
+title = "ELC component"
+placement = "popup"
+width = "70%"
+height = 24
+command = ["bash", "scripts/picker.sh"]

@@ -1,4 +1,4 @@
-# elc Herdr plugin
+
 
 Fuzzy-pick an [ELC](https://github.com/ensi-platform/elc) component and open a
 shell in its folder as a new **pane**, **tab**, or **workspace**.
@@ -12,7 +12,7 @@ shell in its folder as a new **pane**, **tab**, or **workspace**.
 ## Install
 
 ```bash
-herdr plugin link /path/to/elc-herdr-plugin
+herdr plugin install ensi-platform/elc-herdr-plugin
 ```
 
 Add a keybinding in `~/.config/herdr/config.toml`:
@@ -49,4 +49,20 @@ force a specific ELC workspace instead of the current one:
 
 ```bash
 ELC_WORKSPACE=ensi herdr plugin action invoke elc.open-component
+```
+
+## Development
+
+For local development, link the working copy instead of installing from GitHub:
+
+```bash
+herdr plugin unlink elc   # if already installed via install
+herdr plugin link /path/to/elc-herdr-plugin
+```
+
+Edits to scripts apply immediately — no need to re-link. To verify:
+
+```bash
+herdr plugin action invoke elc.open-component
+herdr plugin log list --plugin elc
 ```
